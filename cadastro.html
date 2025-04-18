@@ -1,0 +1,51 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cartas</title>
+</head>
+<body>
+    <h1>Cadastre Seu Novo Stand :0</h1>
+    <form>
+        <fieldset>
+            <legend>Cadastro</legend>
+            <label for="nome_stand">Nome do Stand:</label>
+            <input type="text" name="nome_stand" id="nome_stand" placeholder="Nome">
+            <br><br>
+
+            <input type="file" id="imgStandInput" accept="image/*">
+            <br><br>
+            <img id="preview" src="#" alt="Preview da imagem" style="display:none; max-width: 300px;">
+
+            <label for="tipoStand">Selecione o Tipo de Stand</label>
+            <select name="tipoStand">
+                <option value="" disabled selected>Selecione um tipo</option>
+                <option value="curtoAlcance">Curto Alcance</option>
+                <option value="longoAlcance">Longo Alcance</option>
+                <option value="automatico">Automático</option>
+                <option value="materializado">Materializado</option>
+            </select>
+
+        </fieldset>
+    </form>
+
+    <script>
+        const imgInput = document.getElementById("imgStandInput")
+        const preview = document.getElementById("preview")
+
+        imgInput.addEventListener('change', function(){
+            const img = this.files[0]; //Pega a imagem upada
+            if (img) { // Ve se algum arquivo foi selecionado
+                const reader = new FileReader(); //Faz um objeto FileReader
+                reader.onload = function (evento) {
+                    preview.src = evento.target.result; //Faz com que a classe src do preview seja a imagem carregada em base64
+                    preview.style.display = "block";
+                }
+                reader.readAsDataURL(img);  //le de fato a imagem.
+            }else{
+                preview.src =  "#";
+            }
+        })
+    </script>
+</body>
+</html>

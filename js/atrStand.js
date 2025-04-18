@@ -15,13 +15,12 @@ $(document).ready(function(){
       'Potencial'
       ],
       datasets: [{
-      // 👇 Tiramos o "label" daquitambém se quiser limpar geral
-      data: [5, 1, 3, 5, 2, 0],
+      data: [0, 4, 3, 5, 2, 0],
       backgroundColor: 'rgba(63, 184, 227, 0.4)',
       borderColor: '#121005',
       borderWidth: 2,
       pointBackgroundColor: '#121005',
-      pointRadius: 1, // Reduz o tamanho dos pontos. Ajuste o valor conforme necessário
+      pointRadius: 1, 
       }]
   },
   options: {
