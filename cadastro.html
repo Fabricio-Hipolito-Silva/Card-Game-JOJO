@@ -6,14 +6,14 @@
 </head>
 <body>
     <h1>Cadastre Seu Novo Stand :0</h1>
-    <form>
+    <form id="formStands">
         <fieldset>
             <legend>Cadastro</legend>
             <label for="nome_stand">Nome do Stand:</label>
             <input type="text" name="nome_stand" id="nome_stand" placeholder="Nome" required>
             <br><br>
 
-            <input type="file" id="imgStandInput" accept="image/*" required>
+            <input type="file" name="imgStand" id="imgStandInput" accept="image/*" required>
             <br><br>
             <img id="preview" src="#" alt="Preview da imagem" style="display:none; max-width: 300px;">
             <br>
@@ -110,16 +110,20 @@
                 <br><br>    
             </fieldset>
 
-            <fieldset>
+            <fieldset> <!-- Colocar um nome para aZs habilidades -->
                 <legend>Habilidades</legend>
                 <p>Cada carta pode ter até duas habilidades, descrevá-as a seguir.</p>
-                <label for="hab1">Insira a primeira habilidade</label>
+                <label for="nmhab1">Nome da Habilidade 1</label>
+                <input type="text" name="nmhab1" id="nmhab1">
+                <label for="hab1">Insira a descrição da primeira habilidade</label>
                 <textarea name="hab1" id="hab1" rows="5" cols="33" required></textarea>
                 <label for="nvlhab1">Nivel da Habilidade (1 a 5):</label>
                 <input type="number" id="nvlhab1" name="nvlhab1" min="1" max="5" required>
                 <br><br>
+                <label for="nmhab2">Nome da Habilidade 1</label>
+                <input type="text" name="nmhab2" id="nmhab2">
                 <label for="hab2">Insira a segunda habilidade</label>
-                <textarea name="hab1" id="hab1" rows="5" cols="33" required></textarea>
+                <textarea name="hab2" id="hab2" rows="5" cols="33" required></textarea>
                 <label for="nvlhab2">Nivel da Habilidade (1 a 5):</label>
                 <input type="number" id="nvlhab2" name="nvlhab2" min="1" max="5" required>
             </fieldset>
@@ -151,9 +155,6 @@
             <button type="submit">Cadastrar Carta de Stand</button>
         </fieldset>
     </form>
-
-   
-    
     <script>
         const imgInput = document.getElementById("imgStandInput")
         const preview = document.getElementById("preview")
@@ -172,5 +173,7 @@
             }
         })
     </script>
+    <script src="js/cadastroAjax.js"></script>
+    <div id="resposta"></div>
 </body>
 </html>

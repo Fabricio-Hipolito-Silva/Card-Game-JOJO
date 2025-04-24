@@ -9,14 +9,14 @@ $(document).ready(function(){
       labels: [
       'Poder Destrutivo', 
       'Velocidade', 
-      'Alcance', 
+      'Alcance',
       'Persistência', 
       'Precisão', 
       'Potencial'
       ],
       datasets: [{
-      data: [0, 4, 3, 5, 2, 0],
-      backgroundColor: 'rgba(63, 184, 227, 0.4)',
+      data: [3, 1, 3, 2, 3, 1],
+      backgroundColor: 'rgba(167, 67, 233, 0.4)',
       borderColor: '#121005',
       borderWidth: 2,
       pointBackgroundColor: '#121005',
@@ -34,7 +34,7 @@ r: {
       callback: function(value) {
       const letras = {1: 'E', 2: 'D', 3: 'C', 4: 'B', 5: 'A'};
       return letras[value] || '';
-      },
+      },  
       
 
   }
