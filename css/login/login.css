@@ -51,5 +51,23 @@ main{
 
 }
 
+.logar{
+        padding: 10px 20px;
+        background-color: #6f42c1;
+        color: white;
+        border: none;
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        cursor: pointer;
+}
+
+.logar:hover {
+    background-color: #5936a6;
+  }
+
+.inputlogin{
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    padding: 10px 20px;
+    margin: 20px;
+}
 
 
