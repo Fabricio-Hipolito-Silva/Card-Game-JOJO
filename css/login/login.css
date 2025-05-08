@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'SFFedora';
+    src: url('../../fonts/sf_fedora/SF\ Fedora.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main{
+    background: url("../../img/background_login_2_stands.png"), url("../../img/background_login_2_fundo.jpg");
+    background-repeat: no-repeat, repeat-x;
+    background-size: contain, auto 100%;
+    background-position: center left;
+    animation: moverFundo 10s linear infinite;
+    height: 100vh;
+    font-family: 'SFFedora', sans-serif;
+
+}
+
+@keyframes moverFundo {
+    0% {
+        background-position: center left, 0% bottom;
+    }
+    100% {
+        background-position: center left, 100% bottom;
+    }
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;     
+    position: fixed;
+    margin-right: 10%;
+    right: 0;
+    height: 100vh;
+    width: 65vh;
+    padding: 5%;
+    background: #2E3093;
+    background: linear-gradient(180deg, rgba(46, 48, 147, 0.8) 0%, rgba(39, 30, 61, 0.8) 50%);
+    color: white;
+
+}
+
+
+
