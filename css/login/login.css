@@ -45,7 +45,8 @@ main{
     height: 100vh;
     width: 65vh;
     padding: 5%;
-    background: #2E3093;
+    /* background: rgba(0,0,0,0.6); */
+    /* background: #000000; */
     background: linear-gradient(180deg, rgba(46, 48, 147, 0.8) 0%, rgba(39, 30, 61, 0.8) 50%);
     color: white;
 
@@ -58,16 +59,52 @@ main{
         border: none;
         clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
         cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+
 }
 
 .logar:hover {
     background-color: #5936a6;
-  }
+    transform: scale(1.05);
+}
 
 .inputlogin{
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     padding: 10px 20px;
     margin: 20px;
+    border: 2px solid transparent;
+    outline: none;
+    transition: border 1s ease, box-shadow 0.3s ease; 
 }
+
+
+.inputlogin:focus {
+    border: 2px solid #6f42c1;
+    box-shadow: 0 0 10px #6f42c1;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form img {
+    width: 200px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px rgba(111, 66, 193, 0.7)); /* sombra roxa suave */
+    transition: transform 0.3s ease;
+}
+
+.form img:hover {
+    transform: scale(1.05) rotate(-1deg); /* animação sutil ao passar o mouse */
+}
+
+.form a{
+    color: #6f42c1;;
+}
+
+.form a:hover{
+    color: #5936a6;
+}
+
 
 
