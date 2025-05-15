@@ -1,0 +1,55 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/cadastro_usuario/cadastro_usuario.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <title>Cadastre-se</title>
+    </head>
+    <body>
+        <main>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#cadastro_usuario').on("submit", function(e){
+                    event.preventDefault();
+                    var nm_cadastro =  $("#nm_cadastro").val();
+                    var senha_cadastro =  $("#senha_cadastro").val();
+                        $.ajax({
+                        url: "../../php/cadastro_usuario/cadastro_usuario.php",
+                        type: "POST",
+                        data: { 
+                            nm_cadastro: nm_cadastro,
+                            senha_cadastro: senha_cadastro
+                        },
+                        dataType: "html"
+                }).done(function(resposta) {
+                        $("#form").html(resposta); 
+                }).fail(function(jqXHR, textStatus ) {
+                    console.log("Request failed: " + textStatus);
+                })
+                })
+                })
+        </script>
+        
+            <div class="form" id="form">
+            <form id="cadastro_usuario" name="form_cadastro" method="POST">
+            <img src="../../img/JOJO's logo.png" style="width: 200px">
+            <fieldset>
+                <legend>Cadastre-se</legend>
+                <input id="nm_cadastro" class="inputcadastro" name="nm_cadastro" type="text" placeholder="Insira o Login">
+                <input id="senha_cadastro" class="inputcadastro" name="senha_cadastro" type="password" placeholder="Insira a Senha">
+                <button class="cadastrar" type="submit">Cadastre-se</button>
+                <br>
+                <p>Já é Usuário? <a href="../../index.html">Logue</a></p>
+            </fieldset>
+            </form>
+            </div>
+
+        </main>
+    </body>
+    </html>

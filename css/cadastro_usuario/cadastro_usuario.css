@@ -5,44 +5,40 @@
     font-style: normal;
 }
 
-
 * {
     margin: 0;
     padding: 0;
     border: 0;
 }
-
 main{
-    background: url("../../img/background_login_2_stands.png"), url("../../img/background_login_2_fundo.jpg");
+    background: url("../../img/background_cadastro_jotaro.png"), url("../../img/background_login_2_fundo.jpg");
     background-repeat: no-repeat, repeat-x;
     background-size: contain, auto 100%;
-    background-position: center left;
+    background-position: right bottom, left;
     animation: moverFundo 10s linear infinite;
     height: 100vh;
     font-family: 'SFFedora', sans-serif;
-
 }
 
 @keyframes moverFundo {
     0% {
-        background-position: center left, 0% bottom;
+        background-position: right bottom, 100% bottom;
     }
     100% {
-        background-position: center left, 100% bottom;
+        background-position: right bottom, 0% bottom;
     }
 }
 
 @keyframes aparecerForm {
     0% {
         opacity: 0;
-        transform: translateX(200px); /* vem da direita */
+        transform: translateX(200px);
     }
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
-
 
 .form{
     display: flex;
@@ -51,8 +47,8 @@ main{
     align-items: center;    
     text-align: center;     
     position: fixed;
-    margin-right: 10%;
-    right: 0;
+    margin-left: 10%;
+    left: 0;
     height: 100vh;
     width: 65vh;
     padding: 5%;
@@ -61,9 +57,9 @@ main{
     background: linear-gradient(180deg, rgba(46, 48, 147, 0.8) 0%, rgba(39, 30, 61, 0.8) 50%);
     color: white;
         animation: aparecerForm 0.8s ease-out;
-}
+} 
 
-.logar{
+.cadastrar{
         padding: 10px 20px;
         background-color: #6f42c1;
         color: white;
@@ -75,12 +71,12 @@ main{
         transition: all 0.3s ease;
 }
 
-.logar:hover {
+.cadastrar:hover {
     background-color: #5936a6;
     transform: scale(1.05);
 }
 
-.inputlogin{
+.inputcadastro{
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     padding: 10px 20px;
     margin: 20px;
@@ -90,7 +86,7 @@ main{
 }
 
 
-.inputlogin:focus {
+.inputcadastro:focus {
     border: 2px solid #6f42c1;
     box-shadow: 0 0 10px #6f42c1;
     background-color: rgba(255, 255, 255, 0.05);
