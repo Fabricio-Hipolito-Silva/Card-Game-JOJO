@@ -128,7 +128,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       "universo" => $parte
       ));
     } catch (PDOException $e) {
-      echo "Erro ao cadastrar stand: " . $e->getMessage();
+      if ($e->getCode() == 23000) {
+      echo "Erro: Um Stand de mesmo nome já existe no banco de dados.";
+    } else {
+      echo "Erro ao cadastrar Stand: " . $e->getMessage();
+    }
+    exit;
     }
 
     try {
@@ -140,7 +145,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       ));
       }
     } catch (PDOException $e) {
+      
+      if ($e->getCode() == 23000) {
+      echo "Erro: A habilidade '{$nmhab[$i]}' já existe no banco de dados.";
+    } else {
       echo "Erro ao cadastrar habilidade: " . $e->getMessage();
     }
+    exit;
+    }
+
+//INSERÇÃO TAB HABILIDADEHEROI------------------------------------------------------------------------------------------------
+
+  $sql_cod_stand = "SELECT `codigo` FROM `heroi` WHERE `Nome` = :nome";
+  $cod_stand = $conn->prepare($sql_cod_stand);
+  $cod_stand->execute(['nome' => $nome]);
+  $codigo_heroi_stand_true = $cod_stand->fetchColumn(); 
+
+  $codigos_habilidades = [];
+  foreach ($nmhab as $nome_hab) {
+      $sql_cod_habilidade = "SELECT `Codigo` FROM `habilidade` WHERE `Nome` = :nome";
+      $cod_habilidade = $conn->prepare($sql_cod_habilidade);
+      $cod_habilidade->execute(['nome' => $nome_hab]);
+      $codigos_habilidades[] = $cod_habilidade->fetchColumn(); 
+  };
+
+  $sql_vinculo = "INSERT INTO habilidadeheroi (CD_habilidade, CD_heroi) VALUES (:cd_habilidade, :cd_heroi)";
+  $inserir_vinculo = $conn->prepare($sql_vinculo);
+
+  foreach ($codigos_habilidades as $cod_hab) {
+      $inserir_vinculo->execute([
+          'cd_habilidade' => $cod_hab,
+          'cd_heroi' => $codigo_heroi_stand_true
+      ]);
+  }
+
+
+
+
+
+
+
+
 }
 
