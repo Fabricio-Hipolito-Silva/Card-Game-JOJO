@@ -59,4 +59,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <strong>Parte:</strong> $parte <br>
         <strong>Imagem salva como:</strong> $camImgBD
     ";
+
+    
+      $sql = "INSERT INTO `heroi`(
+          `Nome`, 
+          `Imagem`, 
+          `Tipo`, 
+          `Raridade`, 
+          `PoderDestrutivo`, 
+          `Velocidade`, 
+          `Alcance`, 
+          `Persistencia_Poder`, 
+          `Precisao`, 
+          `universo`
+      ) VALUES (
+          :nome, 
+          :imagem, 
+          :tipo, 
+          :raridade, 
+          :poder_destrutivo, 
+          :velocidade, 
+          :alcance, 
+          :persistencia_poder, 
+          :precisao, 
+          :universo
+      )";
+
+    
+
+    
+    $cadastrar_stand = $conn->prepare($sql);
+
+
+    $cadastrar_hab_stand = $conn->prepare($sql2);
+
+
+    try {
+      $cadastrar_stand->execute(array(  
+      "nome" => $nome,
+      "imagem" => $camImgBD,
+      "tipo" => $tipo,
+      "raridade" => $raridade,
+      "poder_destrutivo" => $poder,
+      "velocidade" => $velocidade,
+      "alcance" => $alcance,
+      "persistencia_poder" => $persistencia,
+      "precisao" => $precisao,
+      "universo" => $parte
+    ))
+    } catch (\Throwable $th) {
+      //throw $th;
+    };
+
 }
