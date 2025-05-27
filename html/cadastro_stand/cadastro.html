@@ -21,10 +21,10 @@
             <label for="tipoStand">Selecione o Tipo de Stand</label>
             <select name="tipoStand" required>
                 <option value="" disabled selected>Selecione um tipo</option>
-                <option value="curtoAlcance">Curto Alcance</option>
-                <option value="longoAlcance">Longo Alcance</option>
-                <option value="automatico">Automático</option>
-                <option value="materializado">Materializado</option>
+                <option value="Curto_Alcance">Curto Alcance</option>
+                <option value="Longo_Alcance">Longo Alcance</option>
+                <option value="Automatico">Automático</option>
+                <option value="Materializado">Materializado</option>
             </select>
 
             <fieldset>
@@ -114,18 +114,18 @@
                 <legend>Habilidades</legend>
                 <p>Cada carta pode ter até duas habilidades, descrevá-as a seguir.</p>
                 <label for="nmhab1">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab1" id="nmhab1">
+                <input type="text" name="nmhab[]" id="nmhab1">
                 <label for="hab1">Insira a descrição da primeira habilidade</label>
-                <textarea name="hab1" id="hab1" rows="5" cols="33" required></textarea>
+                <textarea name="hab[]" id="hab1" rows="5" cols="33" required></textarea>
                 <label for="nvlhab1">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab1" name="nvlhab1" min="1" max="5" required>
+                <input type="number" id="nvlhab1" name="nvlhab[]" min="1" max="5" required>
                 <br><br>
                 <label for="nmhab2">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab2" id="nmhab2">
+                <input type="text" name="nmhab[]" id="nmhab2">
                 <label for="hab2">Insira a segunda habilidade</label>
-                <textarea name="hab2" id="hab2" rows="5" cols="33" required></textarea>
+                <textarea name="hab[]" id="hab2" rows="5" cols="33" required></textarea>
                 <label for="nvlhab2">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab2" name="nvlhab2" min="1" max="5" required>
+                <input type="number" id="nvlhab2" name="nvlhab[]" min="1" max="5" required>
             </fieldset>
             <br><br>
 
