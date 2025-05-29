@@ -12,7 +12,7 @@ $validar->execute();
 
     if ($validar->rowCount() > 0) {
         $_SESSION['usuario_autenticado'] = true;  
-        header("Location: ../../html/cadastro_stand/cadastro.html");
+        header("Location: ../../html/homepage_adm/homepage_adm.html");
         exit;
     }else {
         echo "<script>alert('Usuário ou Senha Inválidos'); window.location.href='../../html/login_adm/login_adm.html';</script>";
