@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(html => {
                     divContPartes.innerHTML = html;
                     divContPartes.setAttribute("data-loaded", "true");
+                    initChartsOnModals(divContPartes); 
                 })
                 .catch(error => {
                     divContPartes.innerHTML = `<div class="text-danger">Erro ao carregar: ${error.message}</div>`

@@ -1,7 +1,6 @@
     <?php
     require "../conecta.php";
 
-    // Verifica se a variável foi enviada corretamente
     $partes = $_POST["parte"] ?? null;
     if (!$partes) {
         http_response_code(400);
@@ -9,7 +8,6 @@
         exit;
     }
 
-    // Prepara e executa a query
     $sql = "SELECT * FROM `heroi` WHERE `universo` = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$partes]); 
@@ -24,6 +22,7 @@
         foreach ($cartas as $i => $carta) {
         $modalId = "Modal" . htmlspecialchars($carta["codigo"]);
         $labelId = "ModalLabel" . htmlspecialchars($carta["codigo"]);
+        $canvasId = "Chart" . $carta["codigo"];
 
         echo '<div class="mb-2 p-2 border rounded">
             <!-- Button trigger modal -->
@@ -34,24 +33,33 @@
             <!-- Modal -->
             <div class="modal fade" id="' . $modalId . '" tabindex="-1" aria-labelledby="' . $labelId . '" aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content carta-modal">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="' . $labelId . '">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="' . $labelId . '"> ' . htmlspecialchars($carta["Nome"]) . '</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            '.nl2br(print_r($carta, true)).'
-                              Nome: ' . htmlspecialchars($carta["Nome"]) . '<br>
-                              Raridade: ' . htmlspecialchars($carta["Raridade"]) . '
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <img src="../../'. htmlspecialchars($carta["Imagem"]).'" class="img-fluid">
+                            Tipo de Stand: '.htmlspecialchars($carta["Tipo"]).'
+                             
+                                <canvas id="' . $canvasId . '"
+                                data-poder="' . ($carta["PoderDestrutivo"]) . '"
+                                data-velocidade="' . ($carta["Velocidade"]) . '"
+                                data-alcance="' . ($carta["Alcance"]) . '"
+                                data-persistencia="' . ($carta["Persistencia_Poder"]) . '"
+                                data-precisao="' . ($carta["Precisao"]) . '"
+                                data-potencial="' . ($carta["Potencial"]) . '"
+                                ></canvas>  
+
+                            Raridade da Carta: '.htmlspecialchars($carta["Raridade"]).'
+
+                            </div>
+                            <div class="modal-footer">
+                            Parte: '.htmlspecialchars($carta["universo"]).'
                         </div>
                     </div>
                 </div>
             </div>
         </div>';
     }
-
     }
