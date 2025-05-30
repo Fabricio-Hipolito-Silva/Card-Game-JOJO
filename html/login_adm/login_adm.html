@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/login/login.css">
+        <link rel="stylesheet" href="../../css/login_adm/login_adm.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,14 @@
 
     <main>
         <div class="form">
-        <form name="form_login" action="php/validar_login.php" method="POST">
-        <a href="html/login_adm/login_adm.html"><img src="img/JOJO's logo.png" style="width: 200px"></a>
+        <form name="form_login" action="../../php/validar_login_adm/validar_login_adm.php" method="POST">
+        <a href="../../index.html"> <img src="../../img/JOJO's logo.png" style="width: 200px"></a>
         <fieldset>
-            <legend>Login</legend>
+            <legend>Administrador</legend>
             <input class="inputlogin" name="nm_login" type="text" placeholder="Insira o Login">
             <input class="inputlogin" name="senha_login" type="password" placeholder="Insira a Senha">
-            <button class="logar" type="submit">Logar</button>
+            <button class="logar" type="submit">Logar como Admin</button>
             <br>
-            <p>Novo Usuário? <a href="html/cadastro_usuario/cadastro_usuario.html">Cadastre-se</a></p>
         </fieldset>
         </form>
         </div>

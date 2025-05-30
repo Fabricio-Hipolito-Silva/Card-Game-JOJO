@@ -21,10 +21,10 @@
             <label for="tipoStand">Selecione o Tipo de Stand</label>
             <select name="tipoStand" required>
                 <option value="" disabled selected>Selecione um tipo</option>
-                <option value="curtoAlcance">Curto Alcance</option>
-                <option value="longoAlcance">Longo Alcance</option>
-                <option value="automatico">Automático</option>
-                <option value="materializado">Materializado</option>
+                <option value="Curto_Alcance">Curto Alcance</option>
+                <option value="Longo_Alcance">Longo Alcance</option>
+                <option value="Automatico">Automático</option>
+                <option value="Materializado">Materializado</option>
             </select>
 
             <fieldset>
@@ -114,18 +114,18 @@
                 <legend>Habilidades</legend>
                 <p>Cada carta pode ter até duas habilidades, descrevá-as a seguir.</p>
                 <label for="nmhab1">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab1" id="nmhab1">
+                <input type="text" name="nmhab[]" id="nmhab1">
                 <label for="hab1">Insira a descrição da primeira habilidade</label>
-                <textarea name="hab1" id="hab1" rows="5" cols="33" required></textarea>
+                <textarea name="hab[]" id="hab1" rows="5" cols="33" required></textarea>
                 <label for="nvlhab1">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab1" name="nvlhab1" min="1" max="5" required>
+                <input type="number" id="nvlhab1" name="nvlhab[]" min="1" max="5" required>
                 <br><br>
                 <label for="nmhab2">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab2" id="nmhab2">
+                <input type="text" name="nmhab[]" id="nmhab2">
                 <label for="hab2">Insira a segunda habilidade</label>
-                <textarea name="hab2" id="hab2" rows="5" cols="33" required></textarea>
+                <textarea name="hab[]" id="hab2" rows="5" cols="33" required></textarea>
                 <label for="nvlhab2">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab2" name="nvlhab2" min="1" max="5" required>
+                <input type="number" id="nvlhab2" name="nvlhab[]" min="1" max="5" required>
             </fieldset>
             <br><br>
 
@@ -143,13 +143,13 @@
             <label for="parte">Escolha de Qual parte seu Stand Pertence</label>
             <select name="parte">
                 <option value="" disabled selected>Selecione uma Parte</option>
-                <option value="prt3">Stardust Crusaders (Parte 3)</option>
-                <option value="prt4">Diamond is Unbreakable (Parte 4)</option>
-                <option value="prt5">Golden Wind (Parte 5)</option>
-                <option value="prt6">Stone Ocean (Parte 6)</option>
-                <option value="prt7">Steel Ball Run (Parte 7)</option>
-                <option value="prt8">JojoLion (Parte 8)</option>
-                <option value="prt9">The JojoLands (Parte 9)</option>
+                <option value="p3">Stardust Crusaders (Parte 3)</option>
+                <option value="p4">Diamond is Unbreakable (Parte 4)</option>
+                <option value="p5">Golden Wind (Parte 5)</option>
+                <option value="p6">Stone Ocean (Parte 6)</option>
+                <option value="p7">Steel Ball Run (Parte 7)</option>
+                <option value="p8">JojoLion (Parte 8)</option>
+                <option value="p9">The JojoLands (Parte 9)</option>
             </select>
             <br><br>
             <button type="submit">Cadastrar Carta de Stand</button>
@@ -173,7 +173,7 @@
             }
         })
     </script>
-    <script src="js/cadastroAjax.js"></script>
+    <script src="../../js/cadastro_stand.js/cadastroAjax.js"></script>
     <div id="resposta"></div>
 </body>
 </html>
