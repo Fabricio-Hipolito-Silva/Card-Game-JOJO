@@ -13,6 +13,15 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([$partes]);
 $cartas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+function mapRaridade($raridade, $map_raridade) {
+return $map_raridade[$raridade];
+}
+
+function mapParte($parte, $map_parte) {
+return $map_parte[$parte];
+}
+
 if (count($cartas) === 0) {
     echo "Nenhuma Carta Encontrada";
 } else {
@@ -31,10 +40,32 @@ if (count($cartas) === 0) {
             $habsInfo = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         }
 
+          $map_raridade = [
+            'Comum' => 1,
+            'Incomum' => 2,
+            'Raro' => 3,
+            'Epico' => 4,
+            'Lendario' => 5,
+            ];
+
+            $map_parte = [
+            'p3' => "../../img/JoJoPrts/jojopt3",
+            'p4' => "../../img/JoJoPrts/jojopt4",
+            'p5' => "../../img/JoJoPrts/jojopt5",
+            'p6' => "../../img/JoJoPrts/jojopt6",
+            'p7' => "../../img/JoJoPrts/jojopt7",
+            'p8' => "../../img/JoJoPrts/jojopt8",
+            'p9' => "../../img/JoJoPrts/jojopt9",
+            ];
+
+        
         $modalId = "Modal" . htmlspecialchars($carta["codigo"]);
         $labelId = "ModalLabel" . htmlspecialchars($carta["codigo"]);
         $canvasId = "Chart" . $carta["codigo"];
+        $quantStar = mapRaridade($carta["Raridade"], $map_raridade);
+        $Parte_stand = mapParte($carta["universo"], $map_parte);
 
+        
         echo '<div class="mb-2 p-2 border rounded">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#' . $modalId . '">
@@ -64,9 +95,10 @@ if (count($cartas) === 0) {
                                 data-precisao="' . $carta["Precisao"] . '"
                                 data-potencial="' . $carta["Potencial"] . '"
                             ></canvas>
-
-                            <hr>';
-                            echo '<span class="titulohab hab">Habilidades do Stand:</span> <br><br>';
+                            
+                            '; 
+                            
+                            echo '<br> <span class="titulohab hab">Habilidades do Stand:</span> <br><br>';
                             if (count($habsInfo) > 0) {
                                 foreach ($habsInfo as $index => $hab) {
                                     echo '<span class="habs"><span class="titulohab">'. htmlspecialchars($hab["Nome"]) . '<br> </span>';
@@ -74,13 +106,17 @@ if (count($cartas) === 0) {
                                 }
                             } else {
                                 echo '<p><em>Sem habilidades cadastradas.</em></p>';
-                            }
-
-                            echo '  
-                                                Raridade da Carta: ' . htmlspecialchars($carta["Raridade"]) . '<i class="fa-solid fa-star" style="color: #FFD43B;"> </i>
+                            };
+                            
+                            echo '';
+                                for ($i = 0; $i < $quantStar; $i++) {
+                                    echo '<i class="fa-solid fa-star fa-2xl" style="color: #FFD43B;"></i>';
+                                }'
+                            <hr>';  
+                                echo'
                                             </div>
                                             <div class="modal-footer">
-                                                Parte: ' . htmlspecialchars($carta["universo"]) .'
+                                              <img class="parte" src="'.$Parte_stand.'">
                                             </div>
                                         </div>
                                     </div>
