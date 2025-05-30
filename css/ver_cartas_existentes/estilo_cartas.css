@@ -23,10 +23,20 @@
 
 .modal-title{
     font-family: 'SFFedora', sans-serif;
+    font-size: 30px;
 }
 
 .tipo_stand{
     font-family: "SFFedora";
+}
+
+.tipo{
+    font-size: 20px;
+}
+
+canvas{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .img_stand{
@@ -34,4 +44,16 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
+}
+
+.titulohab{
+    font-family: "SFFedora";
+}
+
+.habs{
+    font-size: 20px;
+}
+
+.hab{
+    font-size: 30px;
 }

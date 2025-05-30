@@ -46,15 +46,15 @@ if (count($cartas) === 0) {
                 <div class="modal-dialog">
                     <div class="modal-content carta-modal">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="' . $labelId . '">' . htmlspecialchars($carta["Nome"]) . '</h1>
+                            <h1 class="modal-title" id="' . $labelId . '">' . htmlspecialchars($carta["Nome"]) . '</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
                         <hr>
 
                         <div class="modal-body">
-                            <img src="../../' . htmlspecialchars($carta["Imagem"]) . '" class="img-fluid">
-                            <span class="tipo_stand">Tipo de Stand:  </span>'.htmlspecialchars($carta["Tipo"]) . ' 
+                            <img src="../../' . htmlspecialchars($carta["Imagem"]) . '" class="img-fluid img_stand">
+                            <span class="tipo"><span class="tipo_stand">Tipo de Stand:  </span>'.htmlspecialchars($carta["Tipo"]) . '</span>  
 
                             <canvas id="' . $canvasId . '"
                                 data-poder="' . $carta["PoderDestrutivo"] . '"
@@ -66,18 +66,18 @@ if (count($cartas) === 0) {
                             ></canvas>
 
                             <hr>';
-
+                            echo '<span class="titulohab hab">Habilidades do Stand:</span> <br><br>';
                             if (count($habsInfo) > 0) {
                                 foreach ($habsInfo as $index => $hab) {
-                                    echo '<strong>Habilidade ' . ($index + 1) . ':</strong> ' . htmlspecialchars($hab["Nome"]) . '<br>';
-                                    echo '<em>' . htmlspecialchars($hab["Descricao"]) . '</em><br><br>';
+                                    echo '<span class="habs"><span class="titulohab">'. htmlspecialchars($hab["Nome"]) . '<br> </span>';
+                                    echo '<em>' . htmlspecialchars($hab["Descricao"]) . '</em><br><br></span>';
                                 }
                             } else {
                                 echo '<p><em>Sem habilidades cadastradas.</em></p>';
                             }
 
                             echo '  
-                                                Raridade da Carta: ' . htmlspecialchars($carta["Raridade"]) . '
+                                                Raridade da Carta: ' . htmlspecialchars($carta["Raridade"]) . '<i class="fa-solid fa-star" style="color: #FFD43B;"> </i>
                                             </div>
                                             <div class="modal-footer">
                                                 Parte: ' . htmlspecialchars($carta["universo"]) .'
