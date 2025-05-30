@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'SFFedora_Italic';
+    src: url('../../fonts/sf_fedora/SF\ Fedora\ Titles\ Italic.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFFedora';
+    src: url('../../fonts/sf_fedora/SF\ Fedora.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.carta-modal{
+    font-family: 'SFFedora_Italic', sans-serif;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-title{
+    font-family: 'SFFedora', sans-serif;
+}
+
+.tipo_stand{
+    font-family: "SFFedora";
+}
+
+.img_stand{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}

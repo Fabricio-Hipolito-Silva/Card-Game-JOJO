@@ -27,7 +27,6 @@ function initChartsOnModals(scope = document) {
                         ],
                         datasets: [{
                             data: data,
-                            backgroundColor: "rgba(167, 67, 233, 0.4)",
                             borderColor: "#121005",
                             borderWidth: 2,
                             pointBackgroundColor: "#121005",
@@ -37,18 +36,29 @@ function initChartsOnModals(scope = document) {
                     options: {
                         responsive: true,
                         scales: {
-                            r: {
-                                min: 0,
-                                max: 6,
-                                ticks: {
-                                    stepSize: 1,
-                                    callback: function (value) {
-                                        const letras = {0: "Null",1: "E", 2: "D", 3: "C", 4: "B", 5: "A", 6: "∞"};
-                                        return letras[value] || "";
+                                r: {
+                                    backgroundColor: 'transparent',  // Fundo do radar
+                                    min: 0,
+                                    max: 6,
+                                    grid: {
+                                        circular: true,
+                                        color: 'rgba(0,0,0,1)',// linhas do grid, se quiser ajustar
+                                    },
+                                    angleLines: {
+                                        color: 'rgba(0,0,0,1)',
+                                    },
+                                    pointLabels:{
+                                        color: 'rgba(0,0,0,1)',
+                                    },
+                                    ticks: {
+                                        stepSize: 1,
+                                        callback: function (value) {
+                                            const letras = {0: "Null",1: "E", 2: "D", 3: "C", 4: "B", 5: "A", 6: "∞"};
+                                            return letras[value] || "";
+                                        }
                                     }
                                 }
-                            }
-                        },
+                            },
                         plugins: {
                             legend: {
                                 display: false
@@ -56,6 +66,7 @@ function initChartsOnModals(scope = document) {
                         }
                     }
                 });
+            console.log(window.rgb3);
 
                 canvas.dataset.chartLoaded = "true";
             }
