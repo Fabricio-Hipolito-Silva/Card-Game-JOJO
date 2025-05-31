@@ -14,6 +14,8 @@
 
 .carta-modal{
     font-family: 'SFFedora_Italic', sans-serif;
+        border: 5px solid #000000;
+
 }
 
 .modal-header,

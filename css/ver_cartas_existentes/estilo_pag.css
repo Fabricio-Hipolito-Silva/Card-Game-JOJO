@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'SFFedora';
+    src: url('../../fonts/sf_fedora/SF\ Fedora.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes moverFundo {
+    0% {
+        background-position: 0% bottom;
+    }
+    100% {
+        background-position: 100% bottom;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+main{
+    background: url("../../img/background_fundo\ 2.jpg");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: left;
+    animation: moverFundo 10s linear infinite;
+    height: 100vh;
+    font-family: 'SFFedora', sans-serif;
+
+}
+
+.container{
+    font-family: "SFfedora";
+    background: transparent !important;
+}
+
+.tab-pane:not(.show) {
+  display: none !important;
+}
+
+
+
+.nav-link {
+  background-color:#6b1b00;  /* cor de fundo dos itens de aba */
+  color:  #fff0c5 ;    
+  border: 3px solid #000000;
+  border-radius: 5px 5px 0 0;
+  margin: 0 2px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link.active {
+  background-color: #fff0c5 !important;
+  color: #6b1b00 !important;
+  border-bottom: none;
+  transform: scale(1.05);
+}
+
+.nav-link:hover {
+  background-color: #fff0c5 !important;
+  color: #6b1b00 !important;
+  border-bottom: none;
+  transform: scale(1.05);
+}
+
+.nav-tabs{
+    background-color: #6b1b00;
+    border: 3px solid #000000;
+    border-bottom: none;
+}
+
+/* TAB_CONTEUDO------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.tab-pane {
+  border: 3px solid #000000; 
+  border-top: none;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff0c5 !important;
+  color: #6b1b00 !important;
+}
+
+.img-stand-button{
+    width: 150px;
+    height: auto;
+    border: 3px solid #000000; 
+
+}
+
+.btn{
+    background-color: #6b1b00;
+    color: #fff0c5;
+    border: 5px solid #000000;
+    transition: transform 0.3s ease;
+}
+.btn:hover {
+  background-color: #6b1b00 !important;
+  color: #fff0c5 !important;
+  border: 5px solid #000000;
+  transform: scale(1.06);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6b1b00;
+    color: #fff0c5;
+    border: 3px solid #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-family: 'SFFedora', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+a:hover {
+    background-color: #fff0c5;
+    color: #6b1b00;
+    transform: scale(1.05);
+}
+
+.loader {
+    border: 8px solid #ffffff; 
+    border-top: 8px solid #6b1b00;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 50px auto;
+    display: block;
+}
+

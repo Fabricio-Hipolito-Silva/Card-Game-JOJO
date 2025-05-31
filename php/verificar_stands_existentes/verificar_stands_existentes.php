@@ -66,10 +66,10 @@ if (count($cartas) === 0) {
         $Parte_stand = mapParte($carta["universo"], $map_parte);
 
         
-        echo '<div class="mb-2 p-2 border rounded">
+        echo '<div class="mb-2 p-2">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#' . $modalId . '">
-                 '. htmlspecialchars($carta["Nome"]) .'
+                <img src="../../' . htmlspecialchars($carta["Imagem"]) . '" class="img-fluid img-stand-button"> <br> '. htmlspecialchars($carta["Nome"]) .'
             </button>
 
             <!-- Modal -->
