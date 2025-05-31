@@ -58,14 +58,14 @@ main{
     padding: 5%;
     /* background: rgba(0,0,0,0.6); */
     /* background: #000000; */
-    background: linear-gradient(180deg, rgba(46, 48, 147, 0.8) 0%, rgba(39, 30, 61, 0.8) 50%);
+    background: linear-gradient(180deg, rgba(255, 240, 197, 1) 0%, rgba(107, 27, 0, 0.8) 50%);
     color: white;
         animation: aparecerForm 0.8s ease-out;
 }
 
 .logar{
         padding: 10px 20px;
-        background-color: #6f42c1;
+        background-color: rgba(107, 27, 0, 1);
         color: white;
         border: none;
         clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
@@ -76,8 +76,9 @@ main{
 }
 
 .logar:hover {
-    background-color: #5936a6;
+    background-color:rgba(255, 240, 197, 1);
     transform: scale(1.05);
+    color: black;
 }
 
 .inputlogin{
@@ -91,8 +92,8 @@ main{
 
 
 .inputlogin:focus {
-    border: 2px solid #6f42c1;
-    box-shadow: 0 0 10px #6f42c1;
+    border: 2px solid  rgba(255, 240, 197, 1);
+    box-shadow: 0 0 10px rgba(255, 240, 197, 1);
     background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -100,7 +101,7 @@ main{
     width: 200px;
     max-width: 80%;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 8px rgba(111, 66, 193, 0.7)); /* sombra roxa suave */
+    filter: drop-shadow(0 0 8px rgba(107, 27, 0, 1)); /* sombra roxa suave */
     transition: transform 0.3s ease;
 }
 

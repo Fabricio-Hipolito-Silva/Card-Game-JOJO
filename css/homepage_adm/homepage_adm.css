@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: 'SFFedora';
+    src: url('../../fonts/sf_fedora/SF\ Fedora.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: url("../../img/noriaki_kakyoin.png"), url("../../img/background_fundo\ 2.jpg");
+    background-repeat: no-repeat, repeat-x;
+    background-size: contain, auto 100%;
+    background-position: center left;
+    animation: moverFundo 10s linear infinite;
+    height: 100vh;
+    font-family: 'SFFedora', sans-serif;
+
+}
+@keyframes moverFundo {
+    0% {
+        background-position: center left, 0% bottom;
+    }
+    100% {
+        background-position: center left, 100% bottom;
+    }
+}
+
+
+.menu-container {
+  position: absolute;
+  top: 50%;
+  right: 100px; /* ajuste a margem da direita */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 5px;
+  padding: 10px;
+  overflow: hidden;
+  color:#fff0c5;
+  background-color:  #6b1b00 ;
+  animation: aparecerForm 0.8s ease-out;
+
+}
+
+@keyframes aparecerForm {
+    0% {
+        opacity: 0;
+        transform: translateX(200px); /* vem da direita */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecerimg {
+    0% {
+        opacity: 0;
+        transform: translateX(0); /* vem da direita */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+}
+
+
+
+/* Primeira forma */
+.botao:nth-child(1) {
+  transform: translateX(-20px);
+    
+}
+
+/* Segunda forma */
+.botao:nth-child(2) {
+  transform: translateX(20px);
+}
+
+/* Terceira forma */
+.botao:nth-child(3) {
+  transform: translateX(-20px);
+}
+
+/* Hover */
+.botao:hover {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+  color: #6b1b00;
+  background-color: #fff0c5;
+}
