@@ -2,24 +2,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/cadastro_stand/cadastro_stand.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <title>Cadastro de Cartas</title>
 </head>
 <body>
-    <h1>Cadastre Seu Novo Stand :0</h1>
+    <main>
+    <a href="../homepage_adm/homepage_adm.html"><i class="fa-solid fa-arrow-left"></i>Voltar Para a Homepage</a>
     <form id="formStands">
+        <!-- <h1>Cadastre Seu Novo Stand :0</h1> -->
+         
         <fieldset>
             <legend>Cadastro</legend>
             <label for="nome_stand">Nome do Stand:</label>
-            <input type="text" name="nome_stand" id="nome_stand" placeholder="Nome" required>
+            <input type="text" name="nome_stand" id="nome_stand" class="input" required>
             <br><br>
 
-            <input type="file" name="imgStand" id="imgStandInput" accept="image/*" required>
+            <input class="imgStand" type="file" name="imgStand" id="imgStandInput" accept="image/*" required>
             <br><br>
             <img id="preview" src="#" alt="Preview da imagem" style="display:none; max-width: 300px;">
             <br>
 
             <label for="tipoStand">Selecione o Tipo de Stand</label>
-            <select name="tipoStand" required>
+            <select id="meuSelect" class="selectpicker" name="tipoStand" required>
                 <option value="" disabled selected>Selecione um tipo</option>
                 <option value="Curto_Alcance">Curto Alcance</option>
                 <option value="Longo_Alcance">Longo Alcance</option>
@@ -31,7 +39,13 @@
                 <legend>Atributos</legend>
                 <p>Cada carta de Stand possui atributos, que vão de "E" até "A", sendo A o maior valor. Também é possível um valor ser nulo, ou infinito.</p>
 
-                <label for="poderDestrutivo">Poder Destrutivo</label>
+                <div class="label">
+                <label for="poderDestrutivo">Poder Destrutivo   <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text">Mede a força de um Stand e sua habilidade de causar destruição (ferimentos físicos ou dano ambiental colateral) em um dado período de tempo.</span>
+                    </span>
+                </label>
+                
                 <select name="poderDestrutivo" id="poderDestrutivo" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -42,9 +56,17 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+
+                 </div>
                 <br><br>
                 
-                <label for="velocidade">Velocidade</label>
+                <div class="label">
+                <label for="velocidade">Velocidade
+                    <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text">Mede a agilidade e reflexos de um Stand, tal como velocidade de desempenho.</span>
+                    </span>
+                </label>
                 <select name="velocidade" id="velocidade" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -55,9 +77,16 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+                </div>
                 <br><br>
 
-                <label for="alcance">Alcance</label>
+                <div class="label">
+                <label for="alcance">Alcance
+                    <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text">Mede um compromisso da área de manifestação, alcance de influência da habilidade e mobilidade espacial de um Stand.</span>
+                    </span>
+                </label>
                 <select name="alcance" id="alcance" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -68,9 +97,16 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+                </div>
                 <br><br>
                 
-                <label for="persistencia">Persistência de Poder</label>
+                <div class="label">
+                <label for="persistencia">Persistência de Poder
+                    <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text">Mede a duração de tempo na qual o Stand pode manter sua habilidade ativamente. Stands de Longo Alcance capazes de operarem remotamente de seu usuários como Lovers e Empress são descritos como tendo uma alta persistencia de poder.Isso também se aplica a Stands Materializados.</span>
+                    </span>
+                </label>
                 <select name="persistencia" id="persistencia" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -81,9 +117,16 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+                </div>
                 <br><br>
                 
-                <label for="precisao">Precisão</label>
+                <div class="label">
+                <label for="precisao">Precisão
+                    <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text">Mede a precisão e alcance de influência/efeito das habilidades em alvos especificados de um Stand. Stands de tipo automático são normalmente avaliados com uma classificação de D ou menor, com algumas exceções.</span>
+                    </span>
+                </label>
                 <select name="precisao" id="precisao" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -94,9 +137,16 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+                </div>
                 <br><br>  
                 
-                <label for="potencial">Potencial de Desenvolvimento</label>
+                <div class="label">
+                <label for="potencial">Potencial de Desenvolvimento
+                <span class="tooltip">
+                    <i class="fa-regular fa-circle-question fa-xl"></i>
+                    <span class="tooltip-text"> Mede as possíveis funções, utilização de habilidades e poderes, e capacidade de melhorar as capacidades gerais de um Stand. Ele diminui de classificação conforme o usuário domina seu Stand.</span>
+                    </span>
+                </label>
                 <select name="potencial" id="potencial" required>
                 <option value="" disabled selected>Selecione um valor</option>
                 <option value="nulo">Nulo</option>
@@ -107,6 +157,7 @@
                 <option value="a">A</option>
                 <option value="infinito">Infinito</option>
                 </select>
+                </div>
                 <br><br>    
             </fieldset>
 
@@ -114,18 +165,23 @@
                 <legend>Habilidades</legend>
                 <p>Cada carta pode ter até duas habilidades, descrevá-as a seguir.</p>
                 <label for="nmhab1">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab[]" id="nmhab1">
-                <label for="hab1">Insira a descrição da primeira habilidade</label>
-                <textarea name="hab[]" id="hab1" rows="5" cols="33" required></textarea>
+                <input class="input" type="text" name="nmhab[]" id="nmhab1">
+                <div class="descricao">
+                <label for="hab1">Insira a descrição da habilidade 1:</label>
+                <textarea class="input descricao_hab" name="hab[]" id="hab1" rows="5" cols="30" required></textarea>
+                </div>
                 <label for="nvlhab1">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab1" name="nvlhab[]" min="1" max="5" required>
-                <br><br>
-                <label for="nmhab2">Nome da Habilidade 1</label>
-                <input type="text" name="nmhab[]" id="nmhab2">
-                <label for="hab2">Insira a segunda habilidade</label>
-                <textarea name="hab[]" id="hab2" rows="5" cols="33" required></textarea>
+                <input class="input" type="number" id="nvlhab1" name="nvlhab[]" min="1" max="5" required> <br>
+                <hr>
+                <label for="nmhab2">Nome da Habilidade 2</label>
+                <input class="input" type="text" name="nmhab[]" id="nmhab2">
+                <br>
+                <div class="descricao">
+                <label for="hab2">Insira a descrição da habilidade 2</label>
+                <textarea class="input descricao_hab" name="hab[]" id="hab2" rows="5" cols="33" required></textarea>
+                </div>
                 <label for="nvlhab2">Nivel da Habilidade (1 a 5):</label>
-                <input type="number" id="nvlhab2" name="nvlhab[]" min="1" max="5" required>
+                <input class="input" type="number" id="nvlhab2" name="nvlhab[]" min="1" max="5" required>
             </fieldset>
             <br><br>
 
@@ -152,7 +208,7 @@
                 <option value="p9">The JojoLands (Parte 9)</option>
             </select>
             <br><br>
-            <button type="submit">Cadastrar Carta de Stand</button>
+            <button class="enviar" type="submit">Cadastrar Carta de Stand</button>
         </fieldset>
     </form>
     <script>
@@ -174,6 +230,6 @@
         })
     </script>
     <script src="../../js/cadastro_stand.js/cadastroAjax.js"></script>
-    <div id="resposta"></div>
+    </main>
 </body>
 </html>

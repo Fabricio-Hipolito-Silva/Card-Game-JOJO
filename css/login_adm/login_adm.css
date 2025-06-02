@@ -20,7 +20,6 @@ main{
     animation: moverFundo 10s linear infinite;
     height: 100vh;
     font-family: 'SFFedora', sans-serif;
-
 }
 
 @keyframes moverFundo {
@@ -42,8 +41,6 @@ main{
         transform: translateX(0);
     }
 }
-
-
 .form{
     display: flex;
     flex-direction: column;

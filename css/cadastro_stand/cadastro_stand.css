@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'SFFedora';
+    src: url('../../fonts/sf_fedora/SF\ Fedora.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes moverFundo {
+    0% {
+        background-position: 0% bottom;
+    }
+    100% {
+        background-position: 100% bottom;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("../../img/background_fundo 2.jpg");
+    background-repeat: repeat;
+    background-size: auto 50%;
+    background-position: left;
+    animation: moverFundo 10s linear infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form {
+    position: relative; /* fica por cima do fundo animado */
+    z-index: 1;
+    background: rgba(107, 27, 0, 1);
+    color: #fff0c5;
+    width: 100vh;
+    padding: 5%;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: 'SFFedora', sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border: 6px solid  rgb(0, 0, 0);
+}
+
+#preview {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+fieldset{
+    border: 2px solid  rgba(255, 240, 197, 1);
+}
+
+.input, select{
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    padding: 12px;
+    font-family: 'SFFedora', sans-serif;
+}
+
+select{
+    font-family: 'SFFedora', sans-serif;
+    padding: 15px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: #fff0c5; 
+  color: rgba(107, 27, 0, 0.9);
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* aparece acima do ícone */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.label{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+i{
+    padding: 5px;
+}
+
+.descricao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+hr {
+  border: none; 
+  height: 2px;
+  background-color: #fff0c5;
+}
+
+.descricao_hab{
+    padding: 30px;
+}
+
+.enviar{
+    background-color: #fff0c5;
+    color: rgba(107, 27, 0, 1) ;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    padding: 16px;
+    font-family: 'SFFedora', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.enviar:hover{
+ transform: scale(1.05)
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6b1b00;
+    color: #fff0c5;
+    border: 6px solid #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-family: 'SFFedora', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+a:hover {
+    background-color: #fff0c5;
+    color: #6b1b00;
+    transform: scale(1.05);
+}
+
+

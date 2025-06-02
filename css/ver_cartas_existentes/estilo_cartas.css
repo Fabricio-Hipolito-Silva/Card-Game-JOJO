@@ -29,7 +29,7 @@
 }
 
 .tipo_stand{
-    font-family: "SFFedora";
+    font-family: "SFFedora", sans-serif;;
 }
 
 .tipo{
@@ -49,7 +49,7 @@ canvas{
 }
 
 .titulohab{
-    font-family: "SFFedora";
+    font-family: "SFFedora",sans-serif;;
 }
 
 .habs{
