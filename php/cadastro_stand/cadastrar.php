@@ -57,28 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 //ECHO DE DEBUG---------------------------------------------------------------------------------------------------------
-    echo "
-        <strong>Stand cadastrado com sucesso!</strong><br>
-        <strong>Nome:</strong> $nome <br>
-        <strong>Tipo:</strong> $tipo <br>
-        <strong>Poder Destrutivo:</strong> $poder <br>
-        <strong>Velocidade:</strong> $velocidade <br>
-        <strong>Alcance:</strong> $alcance <br>
-        <strong>Persistência:</strong> $persistencia <br>
-        <strong>Precisão:</strong> $precisao <br>
-        <strong>Potencial:</strong> $potencial <br><br>
-
-        <strong>Habilidade 1:</strong> {$nmhab[0]} (Nível: {$nvl[0]})<br>
-        <em>{$hab[0]}</em><br><br>
-
-        <strong>Habilidade 2:</strong> {$nmhab[1]} (Nível: {$nvl[1]})<br>
-        <em>{$hab[1]}</em><br><br>
-
-        <strong>Raridade:</strong> $raridade <br>
-        <strong>Parte:</strong> $parte <br>
-        <strong>Imagem salva como:</strong> $camImgBD
-    ";
-
+  echo "<span class='response'>". $nome . " cadastrado com sucesso, <a href='../ver_cartas_existentes/ver_cartas_existentes.html'>ver Stand.</a></span>";
 //INSERÇÃO NO BANCO---------------------------------------------------------------------------------------------------------
       
       $sql = "INSERT INTO `heroi`(

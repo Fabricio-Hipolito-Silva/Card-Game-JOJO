@@ -4,7 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'SFFedora_Italic';
+    src: url('../../fonts/sf_fedora/SF\ Fedora\ Titles\ Italic.ttf') format('truetype'); /* ou .woff, .otf, etc */
+    font-weight: normal;
+    font-style: normal;
+}
 @keyframes moverFundo {
     0% {
         background-position: 0% bottom;
@@ -60,6 +65,10 @@ fieldset{
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     padding: 12px;
     font-family: 'SFFedora', sans-serif;
+}
+
+.input{
+    font-family: 'SFFedora_Italic';
 }
 
 select{
@@ -153,5 +162,20 @@ a:hover {
     color: #6b1b00;
     transform: scale(1.05);
 }
+
+.response{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6b1b00;
+    color: #fff0c5;
+    border: 6px solid #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-family: 'SFFedora', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 
 

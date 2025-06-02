@@ -1,4 +1,5 @@
 document.getElementById("formStands").addEventListener('submit',function (e){
+    e.preventDefault();
     const formData = new FormData(this);
     fetch('../../php/cadastro_stand/cadastrar.php', {
         method: 'POST',
@@ -6,8 +7,7 @@ document.getElementById("formStands").addEventListener('submit',function (e){
       })
       .then(res => res.text())
       .then(data => {
-        // document.getElementById('resposta').innerHTML = data;
-        alert("Stand Cadastrado")
+        document.getElementById('resposta').innerHTML = data;
         console.log(data);
       })
       .catch(error =>{
