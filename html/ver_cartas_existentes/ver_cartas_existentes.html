@@ -17,7 +17,13 @@
 <body>
   <main>
   <div class="container">
-    <a href="../homepage_adm/homepage_adm.html"><i class="fa-solid fa-arrow-left"></i>Voltar Para a Homepage</a>
+    <div class="linha_topo">
+    <a href="../homepage_adm/homepage_adm.html"> <i class="fa-solid fa-arrow-left"></i> Voltar Para a Homepage </a>
+    <div class="botoes_alteracao">
+        <button type="button" id="editar" class="editar"> <i class="fa-solid fa-pen-to-square"></i> Editar Cartas</button>
+        <button type="button" id="excluir" class="excluir">Excluir Cartas</button>
+    </div>
+</div>
     <ul class="nav nav-tabs justify-content-center" id="standTabs" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="p3-tab" data-bs-toggle="tab" href="#p3" role="tab">Stardust Crusaders</a>
@@ -69,10 +75,12 @@
   </main>
 
   <!-- Bootstrap 5 JS bundle (inclui Popper) -->
+  <script src="../../js/verificar_stands_existentes/carregar_abas.js" ></script>
   <script src="../../js/verificar_stands_existentes/init_chart.js"></script>
   <script src="../../js/verificar_stands_existentes/gradiente_fundo_card.js"></script> 
   <script src="../../js/verificar_stands_existentes/verificar_stands_existentes.js"></script>
-
+  <script src="../../js/verificar_stands_existentes/botao_editar.js"></script>
+  
  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>

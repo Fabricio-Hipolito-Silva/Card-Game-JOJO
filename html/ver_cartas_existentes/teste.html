@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Teste</title>
+</head>
+<body>
+
+<div class="botoes_alteracao">
+  <button type="button" id="editar" class="editar">Editar Cartas</button>
+  <button type="button" id="excluir" class="excluir">Excluir Cartas</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  let modo_edicao = false;
+
+  const editar_btn = document.getElementById("editar");
+  editar_btn.addEventListener('click', function () {
+    modo_edicao = !modo_edicao;
+    if (modo_edicao) {
+      document.body.classList.add('modo-edicao');
+      editar_btn.textContent = "Parar de Editar";
+    } else {
+      document.body.classList.remove('modo-edicao');
+      editar_btn.textContent = "Editar Cartas";
+    }
+  });
+});
+</script>
+
+</body>
+</html>

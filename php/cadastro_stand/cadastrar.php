@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //# IMPORTANTE # - Provavelmente vai ter que arrumar esse caminho posteriormente
 
 
-
 //IMPORTA O RESTO DAS INFOS DO STAND------------------------------------------------------------------
 
     $nome = $_POST['nome_stand'];

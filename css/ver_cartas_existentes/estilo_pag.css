@@ -18,8 +18,13 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.editar {
+    font-family: 'SFFedora', sans-serif;
+}
 
-
+.modo-edicao {
+    background-color: #5887b6 !important; /* Indicativo Modo Edição */
+}
 
 * {
     margin: 0;
@@ -86,7 +91,7 @@ body{
   border-top: none;
   padding: 10px;
   border-radius: 0 0 5px 5px;
-  background-color: #fff0c5 !important;
+  background-color: #fff0c5;
   color: #6b1b00 !important;
 }
 
@@ -122,6 +127,8 @@ a {
     transition: transform 0.3s ease, background-color 0.3s ease;
     margin-bottom: 20px;
     margin-top: 20px;
+    display: flex;
+    justify-content: start;
 }
 
 a:hover {
@@ -139,5 +146,37 @@ a:hover {
     animation: spin 1s linear infinite;
     margin: 50px auto;
     display: block;
+}
+
+.editar, .excluir {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6b1b00;
+    color: #fff0c5;
+    border: 3px solid #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-family: 'SFFedora';
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.editar:hover, .excluir:hover {
+    background-color: #fff0c5;
+    color: #6b1b00;
+    transform: scale(1.05);
+}
+
+.linha_topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;           
+    margin-bottom: 20px;         
+}
+
+.botoes_alteracao{
+    display: flex;
+    gap: 20px;
 }
 

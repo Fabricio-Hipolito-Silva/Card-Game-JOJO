@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             })
         });
+
         
-            document.getElementById("p3-tab").dispatchEvent(new Event("shown.bs.tab"));
+        
+         document.getElementById("p3-tab").dispatchEvent(new Event("shown.bs.tab"));
+
+
     });
