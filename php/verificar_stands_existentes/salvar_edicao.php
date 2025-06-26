@@ -12,6 +12,26 @@ $per = $_POST['Persistencia_Poder'];
 $pre = $_POST['Precisao'];
 $pot = $_POST['Potencial'];
 $raridade = $_POST['Raridade'];
+    if (isset($_POST['excluir'])) {
+        // Ação: excluir carta
+        try {
+            // Apaga os vínculos primeiro
+            $sql = "DELETE FROM habilidadeheroi WHERE CD_heroi = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute(['id' => $id]);
+
+            // Depois apaga o herói (carta)
+            $sql = "DELETE FROM heroi WHERE codigo = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute(['id' => $id]);
+
+            header("Location: ../../html/ver_cartas_existentes/ver_cartas_existentes.html");
+            exit;
+        } catch (PDOException $e) {
+            echo "Erro ao excluir: " . $e->getMessage();
+        }
+
+    }else{
 try {
     $sql = "UPDATE heroi SET 
         Nome = :nome,
@@ -72,4 +92,4 @@ echo "Atualização concluída!";
 
 } catch (PDOException $e) {
     echo "Erro: " . $e->getMessage();
-}}
+}}}

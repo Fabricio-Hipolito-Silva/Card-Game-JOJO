@@ -104,29 +104,29 @@ if (count($cartas) === 0) {
                         <div class="row">
                             <div class="col">
                                 <label>Poder Destrutivo:</label>
-                                <input type="number" min="1" max="8" name="PoderDestrutivo" class="form-control" value="' . htmlspecialchars($carta["PoderDestrutivo"]) . '">
+                                <input type="number" min="0" max="6" name="PoderDestrutivo" class="form-control" value="' . htmlspecialchars($carta["PoderDestrutivo"]) . '">
                             </div>
                             <div class="col">
                                 <label>Velocidade:</label>
-                                <input type="number" min="1" max="8" name="Velocidade" class="form-control" value="' . htmlspecialchars($carta["Velocidade"]) . '">
+                                <input type="number" min="0" max="6" name="Velocidade" class="form-control" value="' . htmlspecialchars($carta["Velocidade"]) . '">
                             </div>
                             <div class="col">
                                 <label>Alcance:</label>
-                                <input type="number" min="1" max="8" name="Alcance" class="form-control" value="' . htmlspecialchars($carta["Alcance"]) . '">
+                                <input type="number" min="0" max="6" name="Alcance" class="form-control" value="' . htmlspecialchars($carta["Alcance"]) . '">
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col">
                                 <label>Persistência:</label>
-                                <input type="number" min="1" max="8" name="Persistencia_Poder" class="form-control" value="' . htmlspecialchars($carta["Persistencia_Poder"]) . '">
+                                <input type="number" min="0" max="6" name="Persistencia_Poder" class="form-control" value="' . htmlspecialchars($carta["Persistencia_Poder"]) . '">
                             </div>
                             <div class="col">
                                 <label>Precisão:</label>
-                                <input type="number" min="1" max="8" name="Precisao" class="form-control" value="' . htmlspecialchars($carta["Precisao"]) . '">
+                                <input type="number" min="0" max="6" name="Precisao" class="form-control" value="' . htmlspecialchars($carta["Precisao"]) . '">
                             </div>
                             <div class="col">
                                 <label>Potencial:</label>
-                                <input type="number" min="1" max="8"name="Potencial" class="form-control" value="' . htmlspecialchars($carta["Potencial"]) . '">
+                                <input type="number" min="0" max="6"name="Potencial" class="form-control" value="' . htmlspecialchars($carta["Potencial"]) . '">
                             </div>
                         </div>
 
@@ -163,6 +163,7 @@ if (count($cartas) === 0) {
                     <div class="modal-footer">
                         <img class="parte" src="' . $Parte_stand . '">
                         <button type="submit" class="btn btn-success">Salvar alterações</button>
+                        <button type="submit" name="excluir" value="1" class="btn btn-danger">Excluir Carta</button>
                     </div>
                 </div>
             </div>
